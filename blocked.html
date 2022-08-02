@@ -4,18 +4,31 @@
 <title>Block Site</title>
 <link rel="stylesheet" href="common.css">
 <style>
+  body {
+    background-color: #616c4b;
+  }
   #url {
     font-family: monospace;
     opacity: .3;
+  }
+  #container {
+    border-radius: 10px;
+    padding: 10px;
+    margin: auto;
+    width: 500px;
+    height: 500px;
   }
 </style>
 </head>
 <body>
 
-<h1>Block Site</h1>
-<p><span id="url"></span> was blocked.</p>
-<a href="options.html" target="_blank">See Options</a>
+<div id="container">
+  <h2>Block Site</h2>
+  <p><span id="url"></span> was blocked.</p>
+  <a href="options.html" target="_blank">See Options</a>
 
+  <h1 id="motivation">NOPE!</h1>
+  </div>
 <script src="blocked.js"></script>
 </body>
 </html>
