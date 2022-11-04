@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="config.js"></script>
 <title>Block Site</title>
 <link rel="stylesheet" href="common.css">
 <style>
@@ -20,6 +21,30 @@
     height: 500px;
     color: white;
   }
+
+  #tasks {
+    color: #cfe4a7;
+    font-size: 18px;
+  }
+
+  #tasks li {
+    border-bottom-color: #c9cac7;
+    border-bottom-style: dotted;
+  }
+
+  #button-get-tasks {
+    background-color: #cfe4a7;
+    border-radius: 5px;
+    border: none;
+    color: #b2b4ae;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
 </style>
 </head>
 <body>
@@ -30,7 +55,10 @@
   <a href="options.html" target="_blank">See Options</a>
 
   <h1 id="motivation">NOPE!</h1>
+  <div id="button-get-tasks">Get tasks</div>
+  <ul id="tasks"></ul>
   </div>
 <script src="blocked.js"></script>
+<script src="notion_tasks.js"></script>
 </body>
 </html>

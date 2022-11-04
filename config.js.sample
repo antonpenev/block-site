@@ -1,0 +1,8 @@
+const config = {
+  NOTION: {
+    SECRET: "NOTION_GENERATED_SECRET_HERE",
+    TODO_PAGE_BLOCK_ID: "Block id with rows",
+    VERSION: "2022-02-22",
+    URL: "https://api.notion.com/v1",
+  },
+};
