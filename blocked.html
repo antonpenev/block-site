@@ -5,13 +5,60 @@
 <title>Block Site</title>
 <link rel="stylesheet" href="common.css">
 <style>
-  body {
-    background-color: #b2b4ae;
+  @media(prefers-color-scheme: light) {
+    body {
+    background-color: #dcdcdc;
+    color: rgb(94, 90, 90);
+  }
+  #url {
+    color: #ececec;
+    font-family: monospace;
+    opacity: .3;
+  }
+  #container {
+    border-radius: 10px;
+    padding: 10px;
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    color: 796d6d;
+  }
+
+  #tasks {
+    color: #cfe4a7;
+    font-size: 18px;
+  }
+
+  #tasks li {
+    border-bottom-color: #4f5543;
+    border-bottom-style: dotted;
+  }
+
+  #button-get-tasks {
+    background-color: #666d59;
+    border-radius: 5px;
+    border: none;
+    color: #b2b4ae;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  }
+  @media(prefers-color-scheme: dark) {
+    body {
+    background-color: #2a2c26;
     color: white;
   }
   #url {
     font-family: monospace;
     opacity: .3;
+  }
+  #url a {
+    color: #ececec;
   }
   #container {
     border-radius: 10px;
@@ -33,7 +80,7 @@
   }
 
   #button-get-tasks {
-    background-color: #cfe4a7;
+    background-color: #4f5543;
     border-radius: 5px;
     border: none;
     color: #b2b4ae;
@@ -44,6 +91,7 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+  }
   }
 </style>
 </head>
