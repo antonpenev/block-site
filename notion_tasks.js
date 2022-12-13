@@ -7,24 +7,25 @@ const makeNotionCall = async (endpoint, config = NOTION_CONFIG) => {
   myHeaders.append("Authorization", "Bearer " + config.SECRET);
   myHeaders.append("Notion-Version", config.VERSION);
 
-  const requestOptions = { headers: myHeaders };
+  const requestOptions = { headers: myHeaders, method: "POST" };
 
   const raw = await fetch(config.URL + endpoint, requestOptions);
   return raw.json();
 };
 
-const fetchPageTasks = async (blockId = NOTION_CONFIG.TODO_PAGE_BLOCK_ID) => {
-  const rawResult = await makeNotionCall(`/blocks/${blockId}/children`);
-  const tasks = rawResult.results
-    .filter((block) => block.to_do && block.to_do.checked === false)
-    .map((block) =>
-      block.to_do.rich_text.map((lineElem) => lineElem.plain_text).join(" ")
-    );
+const fetchPageTasks = async (
+  blockId = NOTION_CONFIG.TODO_DATABASE_BLOCK_ID
+) => {
+  const rawResult = await makeNotionCall(`/databases/${blockId}/query`);
+  const tasks = rawResult.results.map(
+    (row) =>
+      `[${row.properties.Project.select.name}] ${row.properties.Task.title[0].plain_text}`
+  );
   return tasks;
 };
 
 const fetchMyTODOs = async () => {
-  const tasks = await fetchPageTasks(NOTION_CONFIG.TODO_PAGE_BLOCK_ID);
+  const tasks = await fetchPageTasks(NOTION_CONFIG.TODO_DATABASE_BLOCK_ID);
   console.log("tasks", tasks);
   return tasks;
 };
